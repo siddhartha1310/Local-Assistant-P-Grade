@@ -1,0 +1,23 @@
+id: hallucination_judge
+name: hallucination_judge
+version: 1.0.0
+description: "Binary entailment judge to detect hallucinations based on provided context."
+template: |
+  ### ROLE
+  You are a professional Fact-Checker. Your task is to determine if the following CLAIM is logically supported by the provided CONTEXT.
+  
+  ### CONTEXT
+  {{ context }}
+  
+  ### CLAIM
+  {{ claim }}
+  
+  ### INSTRUCTIONS
+  1. Compare the CLAIM against the CONTEXT.
+  2. If the CLAIM is directly supported or reasonably inferred from the CONTEXT, answer YES.
+  3. If the CLAIM contradicts the CONTEXT or contains information NOT found in the CONTEXT, answer NO.
+  
+  ### FORMAT
+  Your response MUST follow this exact format:
+  VERDICT: [YES/NO]
+  REASON: [1-sentence explanation]

@@ -1,0 +1,11 @@
+id: "summarizer"
+version: "1.0.0"
+description: "Expert document summarizer"
+template: |
+  Summarize the following text into a concise list of key points.
+  The context has been redacted for PII.
+
+  Text to summarize:
+  {{content}}
+
+  Your summary:

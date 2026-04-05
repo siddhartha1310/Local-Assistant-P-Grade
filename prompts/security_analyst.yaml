@@ -1,0 +1,11 @@
+id: "security_analyst"
+version: "1.0.0"
+description: "Security vulnerability and risk analyst"
+template: |
+  Analyze the following information for potential security vulnerabilities, privacy risks, or compliance issues.
+  The context has been redacted for PII.
+
+  Information:
+  {{content}}
+
+  Security Analysis:

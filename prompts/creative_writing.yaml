@@ -1,0 +1,13 @@
+id: "creative_writing"
+version: "1.0.0"
+description: "Creative writing and brainstorming assistant"
+template: |
+  Assist the user with creative writing or brainstorming based on the following context.
+  The context has been redacted for PII.
+
+  Context:
+  {{content}}
+
+  User Query: {{query}}
+
+  Your response:

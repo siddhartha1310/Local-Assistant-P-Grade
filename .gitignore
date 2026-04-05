@@ -1,0 +1,25 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local data & environment
+.env
+data/*.db
+data/secure_vault.db
+
+# Project-specific
+*.log
+uv.lock (should be committed for uv-based projects)
+# uv.lock is usually committed. I'll include it.

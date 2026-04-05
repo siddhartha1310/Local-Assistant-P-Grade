@@ -1,0 +1,11 @@
+id: "default_chat"
+version: "1.0.0"
+description: "Default secure chat template"
+template: |
+  You are a secure Local AI Assistant. 
+  The following context has been redacted for PII.
+  
+  User Question: {{query}}
+  
+  Context:
+  {{content}}

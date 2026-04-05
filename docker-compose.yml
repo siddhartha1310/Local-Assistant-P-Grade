@@ -1,0 +1,41 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11435:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    deploy:
+      resources:
+        limits:
+          memory: ${OLLAMA_MEM_LIMIT:-4G}
+          cpus: '${OLLAMA_CPU_LIMIT:-4}'
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  assistant:
+    build: .
+    container_name: secure-assistant
+    depends_on:
+      ollama:
+        condition: service_healthy
+    volumes:
+      - ./.env:/app/.env
+      - ./data:/app/data
+      - ./prompts:/app/prompts
+      - ./src:/app/src
+    tty: true
+    stdin_open: true
+    deploy:
+      resources:
+        limits:
+          memory: ${ASSISTANT_MEM_LIMIT:-2G}
+          cpus: '${ASSISTANT_CPU_LIMIT:-2}'
+
+volumes:
+  ollama_data:

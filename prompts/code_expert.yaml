@@ -1,0 +1,11 @@
+id: "code_expert"
+version: "1.0.0"
+description: "Expert code reviewer and analyst"
+template: |
+  Review the following code for best practices, potential bugs, and performance improvements.
+  The context has been redacted for PII.
+
+  Code:
+  {{content}}
+
+  Your review and suggestions:
